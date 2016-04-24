@@ -3,9 +3,9 @@ alt - A Little Template Code Generator for C++
 
 This is a little program that turns a file "inside out", so that literal runs
 of characters turn into function calls printing those characters. You can then
-drop in control structures and dynamic to print by using special escape block
-comments. This is more maintainable than writing a bunch of `printf()` or
-`std::cout` calls and handle escaping and all kinds of nonsense.
+drop in control structures and dynamic expressions to print by using special
+escape block comments. This is more maintainable than writing a bunch of
+`printf()` or `std::cout` calls and handle escaping and all kinds of nonsense.
 
 The block comments recognized are:
 
