@@ -10,7 +10,7 @@ comments. This is more maintainable than writing a bunch of `printf()` or
 The block comments recognized are:
 
 - `/* <arbitrary C++> */` - Control structure, no whitespace trimming
-l `/* <arbitrary C++> -*/` - Control structure, whitespace up to and including following newline is removed
+- `/* <arbitrary C++> -*/` - Control structure, whitespace up to and including following newline is removed
 - `/*- <C++ expression> */` - Emit expression, no whitespace trimming
 - `/*- <C++ expression> -*/` - Emit expression, whitespace up to and including following newline is removed
 
