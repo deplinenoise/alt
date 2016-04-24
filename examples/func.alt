@@ -1,0 +1,7 @@
+/* void print_stuff(bool bar, int k) { -*/
+Here's some text.
+/* if (bar) {-*/
+This is optionally printed. k = /*- k */
+/* } -*/
+Here's some more text.
+/* } -*/
