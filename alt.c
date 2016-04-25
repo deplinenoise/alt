@@ -126,8 +126,10 @@ static const char* escape(const char* t, const char* te, const char* fn, FILE* o
   if (eat_trailing_ws) {
     while (t != te && isspace(*t)) {
       ++t;
-      if ('\n' == *t)
+      if ('\n' == *t) {
+        ++(*lineno);
         break;
+      }
     }
   }
 
