@@ -60,6 +60,7 @@ static void flush_litrun(const char* start, int len, FILE* out)
     int cc = start[i];
     // Handle escaping the data to be able to put it in a C++ string literal.
     switch (cc) {
+    case '"': fputs("\\\"", out); break;
     case '\n': fputs("\\n", out); break;
     case '\r': fputs("\\r", out); break;
     case '\t': fputs("\\t", out); break;
