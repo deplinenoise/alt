@@ -14,7 +14,7 @@ The block comments recognized are:
 - `/*- <C++ expression> */` - Emit C++ expression, no whitespace trimming
 - `/*- <C++ expression> -*/` - Emit C++ expression, whitespace up to and including following newline is removed
 - `/*F "fmt-string", args... */` - Emit printf-like formatting string, no whitespace trimming
-- `/*F "fmt-string", args... -*/` - Emit rintf-like formatting string, whitespace up to and including following newline is removed
+- `/*F "fmt-string", args... -*/` - Emit printf-like formatting string, whitespace up to and including following newline is removed
 
 Ways to use alt
 ---------------
