@@ -11,8 +11,10 @@
 //
 // /*  control structures    */
 // /*  control, eat ws      -*/
-// /*- eval expr to print    */
-// /*- eval + print, eat ws -*/
+// /*- eval expr to print    */ (For C++)
+// /*- eval + print, eat ws -*/ (For C++)
+// /*F "%d", some_expr() */ (For C and C++, printf formatting)
+// /*F "%d %s", some_expr(), other_expr() -*/ (For C and C++, printf and eat ws)
 //
 // Two functions signatures are expected to be provided by the host program:
 //   emit(const char*, int) - write a literal string of bytes to the output stream
@@ -96,6 +98,12 @@ static const char* escape(const char* t, const char* te, const char* fn, FILE* o
   if (t != te && *t == '-') {
     is_expr = 1;
     fprintf(out, "  emit_expr(");
+    ++t;
+  }
+
+  else if (t != te && *t == 'F') {
+    is_expr = 1;
+    fprintf(out, "  emitf(");
     ++t;
   }
 

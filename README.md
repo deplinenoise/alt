@@ -1,5 +1,5 @@
-alt - A Little Template Code Generator for C++
-==============================================
+alt - A Little Template Code Generator for C and C++
+====================================================
 
 This is a little program that turns a file "inside out", so that literal runs
 of characters turn into function calls printing those characters. You can then
@@ -11,8 +11,10 @@ The block comments recognized are:
 
 - `/* <arbitrary C++> */` - Control structure, no whitespace trimming
 - `/* <arbitrary C++> -*/` - Control structure, whitespace up to and including following newline is removed
-- `/*- <C++ expression> */` - Emit expression, no whitespace trimming
-- `/*- <C++ expression> -*/` - Emit expression, whitespace up to and including following newline is removed
+- `/*- <C++ expression> */` - Emit C++ expression, no whitespace trimming
+- `/*- <C++ expression> -*/` - Emit C++ expression, whitespace up to and including following newline is removed
+- `/*F "fmt-string", args... */` - Emit printf-like formatting string, no whitespace trimming
+- `/*F "fmt-string", args... -*/` - Emit rintf-like formatting string, whitespace up to and including following newline is removed
 
 Ways to use alt
 ---------------
@@ -43,7 +45,18 @@ You can see two things going on here. Runs of literal text are converted to
 `emit()` function calls. Expressions turn into `emit_expr()` calls. The host
 program must define these two functions.
 
-Alternatively the host program might want to drop in an alt template inline. In
+Alternatively we can use printf-style formatting, which will work better for C
+host programs and calls an `emitf(fmt, ...)` function:
+
+    /* void print_stuff(bool bar, int k) { -*/
+    Here's some text.
+    /* if (bar) {-*/
+    This is optionally printed. k = /*F "%d + %d = %d", k, 2, k + 2 */
+    /* } -*/
+    Here's some more text.
+    /* } -*/
+
+Also the host program might want to drop in an alt template inline. In
 that case, an `#include` statement does the trick.
 
 File `includeme.alt`:
