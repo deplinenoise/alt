@@ -1,0 +1,7 @@
+/* void print_stuff(bool bar, int k) { -*/
+Here's some text.
+/* if (bar) {-*/
+This is optionally printed using printf formatting. k = /*F "%d, %08x", k, k + 12 */
+/* } -*/
+Here's some more text.
+/* } -*/
